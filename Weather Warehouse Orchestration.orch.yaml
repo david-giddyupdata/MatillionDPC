@@ -25,7 +25,7 @@ pipeline:
         sqlQuery: |
           SELECT city, country_code, latitude, longitude, population
           FROM matilliontraining.city
-          WHERE city IN ('Sao Paulo', 'London', 'Madrid', 'Denver', 'Paris', 'Beijing', 'Rio de Janeiro', 'Shanghai', 'Sydney', 'Manchester');
+          WHERE city IN ('Sao Paulo', 'London', 'Madrid', 'Denver', 'Paris', 'Beijing', 'Rio de Janeiro', 'Shanghai', 'Sydney', 'Manchester''New York');
         fetchSize:
         type: "Standard"
         primaryKeys:
@@ -77,3 +77,19 @@ design:
         x: 330
         "y": 100
       tempMetlId: 3
+        x: 180
+        "y": -80
+      tempMetlId: 2
+  notes:
+    "1":
+      position:
+        x: 530
+        "y": -170
+      size:
+        height: 420
+        width: 300
+      theme: "white"
+      content: |-
+        ### Database Query
+
+        The **Database Query** component is used to execute a SQL query against a specified database. In this case, it is configured to connect to a PostgreSQL database using the provided connection URL, username, and password. The SQL query selects specific columns (`city`, `country_code`, `latitude`, `longitude`, `population`) from the `matilliontraining.city` table where the city is one of the listed cities. The results of this query are staged into a target table named `src_city` in Snowflake. This component is essential for extracting data from the source database and preparing it for further processing or transformation within the pipeline.
