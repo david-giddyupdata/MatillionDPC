@@ -22,7 +22,7 @@ pipeline:
         sqlQuery: |
           SELECT city, country_code, latitude, longitude, population
           FROM matilliontraining.city
-          WHERE city IN ('Sao Paulo', 'London', 'Madrid', 'Denver', 'Paris', 'Beijing', 'Rio de Janeiro', 'Shanghai', 'Sydney', 'Manchester');
+          WHERE city IN ('Sao Paulo', 'London', 'Madrid', 'Denver', 'Paris', 'Beijing', 'Rio de Janeiro', 'Shanghai', 'Sydney', 'Manchester','New York');
         fetchSize:
         type: "Standard"
         primaryKeys:
