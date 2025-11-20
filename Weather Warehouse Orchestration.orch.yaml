@@ -11,6 +11,9 @@ pipeline:
         componentName: "Start"
     Database Query:
       type: "database-query"
+      transitions:
+        success:
+        - "Send Email"
       parameters:
         componentName: "Stage Cities"
         basicAdvancedMode: "Advanced"
@@ -37,6 +40,26 @@ pipeline:
       postProcessing:
         updateOutputMessage:
         updateScalarVariables:
+    Send Email:
+      type: "send-email-v2"
+      parameters:
+        componentName: "Send Email"
+        toRecipients:
+        ccRecipients:
+        subject:
+        message:
+        senderAddress:
+        replyAddress:
+        smtpUsername:
+        smtpPassword:
+        smtpHostname:
+        smtpPort: "25"
+        enableSslTls:
+        enableStartTls: "Yes"
+        s3Location: "s3://"
+      postProcessing:
+        updateOutputMessage:
+        updateScalarVariables:
 design:
   components:
     Start:
@@ -46,6 +69,14 @@ design:
       tempMetlId: 1
     Database Query:
       position:
+        x: 170
+        "y": 100
+      tempMetlId: 2
+    Send Email:
+      position:
+        x: 330
+        "y": 100
+      tempMetlId: 3
         x: 180
         "y": -80
       tempMetlId: 2
