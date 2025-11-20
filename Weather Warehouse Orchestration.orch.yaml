@@ -14,6 +14,7 @@ pipeline:
       transitions:
         success:
         - "New Feature"
+        - "Bug Fix"
       parameters:
         componentName: "Stage Cities"
         basicAdvancedMode: "Advanced"
@@ -44,6 +45,10 @@ pipeline:
       type: "alter-table"
       parameters:
         componentName: "New Feature"
+    Bug Fix:
+      type: "alter-table"
+      parameters:
+        componentName: "Bug Fix"
         targetTable:
         schema: "[Environment Default]"
         database: "[Environment Default]"
@@ -67,4 +72,8 @@ design:
       position:
         x: 320
         "y": 130
+    Bug Fix:
+      position:
+        x: 320
+        "y": -100
       tempMetlId: 3
