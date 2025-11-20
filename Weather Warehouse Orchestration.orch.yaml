@@ -70,10 +70,10 @@ design:
     Database Query:
       position:
         x: 170
-        "y": -90
+        "y": 100
       tempMetlId: 2
     Send Email:
       position:
         x: 330
-        "y": -90
+        "y": 100
       tempMetlId: 3
