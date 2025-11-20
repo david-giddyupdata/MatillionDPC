@@ -11,6 +11,9 @@ pipeline:
         componentName: "Start"
     Database Query:
       type: "database-query"
+      transitions:
+        success:
+        - "Bug Fix"
       parameters:
         componentName: "Stage Cities"
         basicAdvancedMode: "Advanced"
@@ -37,6 +40,17 @@ pipeline:
       postProcessing:
         updateOutputMessage:
         updateScalarVariables:
+    Bug Fix:
+      type: "alter-table"
+      parameters:
+        componentName: "Bug Fix"
+        targetTable:
+        schema: "[Environment Default]"
+        database: "[Environment Default]"
+        searchOptimizationService: "Off"
+      postProcessing:
+        updateOutputMessage:
+        updateScalarVariables:
 design:
   components:
     Start:
@@ -49,3 +63,8 @@ design:
         x: 160
         "y": 0
       tempMetlId: 2
+    Bug Fix:
+      position:
+        x: 320
+        "y": -100
+      tempMetlId: 3
