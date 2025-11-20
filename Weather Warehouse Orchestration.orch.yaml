@@ -22,10 +22,10 @@ pipeline:
         username: "postgres"
         password: "Postgres"
         connectionOptions:
-        sqlQuery: |
+        sqlQuery: |-
           SELECT city, country_code, latitude, longitude, population
           FROM matilliontraining.city
-          WHERE city IN ('Sao Paulo', 'London', 'Madrid', 'Denver', 'Paris', 'Beijing', 'Rio de Janeiro', 'Shanghai', 'Sydney', 'Manchester');
+          WHERE city IN ('Sao Paulo', 'London', 'Madrid', 'Denver', 'Paris', 'Beijing', 'Rio de Janeiro', 'Shanghai', 'Sydney', 'Manchester','New York');
         fetchSize:
         type: "Standard"
         primaryKeys:
@@ -71,6 +71,8 @@ design:
       position:
         x: 160
         "y": -50
+        x: 200
+        "y": 100
       tempMetlId: 2
     Send Email:
       position:
